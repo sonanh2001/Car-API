@@ -80,7 +80,7 @@ public class CreateCarRequest {
     this.publicationDate = publicationDate;
   }
 
-  public Car toEntity() {
+  public Car toCar() {
     Car car = new Car();
     car.setBrand(this.getBrand());
     car.setColor(this.getColor());

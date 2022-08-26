@@ -18,8 +18,8 @@ public class UpdateCarRequest extends CreateCarRequest {
     this.carId = carId;
   }
 
-  public Car toEntity(Car car) {
-    Car carUpdated = super.toEntity();
+  public Car toCar(Car car) {
+    Car carUpdated = super.toCar();
     carUpdated.setCarId(car.getCarId());
     return carUpdated;
   }
