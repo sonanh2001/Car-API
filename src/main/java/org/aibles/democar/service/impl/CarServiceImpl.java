@@ -25,15 +25,18 @@ public class CarServiceImpl implements CarService {
   @Transactional
   public CarResponse create(CreateCarRequest request) {
     log.info("(create)name : {}", request.getName());
-    return CarResponse.from(repository.save(request.toEntity()));
+    return CarResponse.from(repository.save(request.toCar()));
   }
 
   @Override
   @Transactional
   public void deleteById(long id) {
     log.info("(deleteById)id : {}", id);
-    Car car = repository.findById(id).orElseThrow(() -> new CarNotFoundException(id));
-    repository.delete(car);
+    if(repository.existsById(id)) {
+      repository.deleteById(id);
+    } else {
+      throw new CarNotFoundException(id);
+    }
   }
 
   @Override
@@ -58,7 +61,7 @@ public class CarServiceImpl implements CarService {
     Car car =
         repository
             .findById(id)
-            .map(request::toEntity)
+            .map(request::toCar)
             .orElseThrow(() -> new CarNotFoundException(id));
     return CarResponse.from(repository.save(car));
   }
