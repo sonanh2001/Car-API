@@ -18,17 +18,17 @@ public class CreateCarRequest {
 
   @Min(value = 4, message = "a car must have more than 3 wheels")
   @NotNull(message = "a car must have wheel numbers")
-  private int wheelsNumber;
+  private Integer wheelsNumber;
 
   @NotBlank(message = "a car must have a color")
   @Size(min = 2, max = 20, message = "length of color must between 2 and 20")
   private String color;
 
   @NotNull(message = "a car must have a price")
-  private long price;
+  private Long price;
 
   @NotNull(message = "a car must have a publication date")
-  private int publicationDate;
+  private Integer publicationDate;
 
   public CreateCarRequest() {}
 
@@ -48,11 +48,11 @@ public class CreateCarRequest {
     this.brand = brand;
   }
 
-  public int getWheelsNumber() {
+  public Integer getWheelsNumber() {
     return wheelsNumber;
   }
 
-  public void setWheelsNumber(int wheelsNumber) {
+  public void setWheelsNumber(Integer wheelsNumber) {
     this.wheelsNumber = wheelsNumber;
   }
 
@@ -64,19 +64,19 @@ public class CreateCarRequest {
     this.color = color;
   }
 
-  public long getPrice() {
+  public Long getPrice() {
     return price;
   }
 
-  public void setPrice(long price) {
+  public void setPrice(Long price) {
     this.price = price;
   }
 
-  public int getPublicationDate() {
+  public Integer getPublicationDate() {
     return publicationDate;
   }
 
-  public void setPublicationDate(int publicationDate) {
+  public void setPublicationDate(Integer publicationDate) {
     this.publicationDate = publicationDate;
   }
 

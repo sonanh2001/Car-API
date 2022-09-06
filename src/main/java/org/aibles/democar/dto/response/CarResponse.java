@@ -1,20 +1,36 @@
 package org.aibles.democar.dto.response;
 
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import org.aibles.democar.entity.Car;
+import org.aibles.democar.validation.ModelValidator;
 
-public class CarResponse {
-  private long carId;
+public class CarResponse extends ModelValidator<CarResponse> {
+  @NotNull(message = "a response car must have a id")
+  private Long carId;
+  @NotBlank(message = "name must not blank")
+  @Size(min = 2, max = 128, message = "length of name must between 2 and 128")
   private String name;
 
+  @NotBlank(message = "brand must not blank")
+  @Size(min = 2, max = 50, message = "length of brand must between 2 and 50")
   private String brand;
 
-  private int wheelsNumber;
+  @Min(value = 4, message = "a car must have more than 3 wheels")
+  @NotNull(message = "a car must have wheel numbers")
+  private Integer wheelsNumber;
 
+  @NotBlank(message = "a car must have a color")
+  @Size(min = 2, max = 20, message = "length of color must between 2 and 20")
   private String color;
 
-  private long price;
+  @NotNull(message = "a car must have a price")
+  private Long price;
 
-  private int publicationDate;
+  @NotNull(message = "a car must have a publication date")
+  private Integer publicationDate;
 
   public CarResponse() {}
 
@@ -42,11 +58,11 @@ public class CarResponse {
     this.brand = brand;
   }
 
-  public int getWheelsNumber() {
+  public Integer getWheelsNumber() {
     return wheelsNumber;
   }
 
-  public void setWheelsNumber(int wheelsNumber) {
+  public void setWheelsNumber(Integer wheelsNumber) {
     this.wheelsNumber = wheelsNumber;
   }
 
@@ -58,19 +74,19 @@ public class CarResponse {
     this.color = color;
   }
 
-  public long getPrice() {
+  public Long getPrice() {
     return price;
   }
 
-  public void setPrice(long price) {
+  public void setPrice(Long price) {
     this.price = price;
   }
 
-  public int getPublicationDate() {
+  public Integer getPublicationDate() {
     return publicationDate;
   }
 
-  public void setPublicationDate(int publicationDate) {
+  public void setPublicationDate(Integer publicationDate) {
     this.publicationDate = publicationDate;
   }
 

@@ -19,7 +19,9 @@ public class ExceptionHandle {
     Map<String, Object> errorMap = new HashMap<>();
     errorMap.put("status", ex.getStatus());
     errorMap.put("code", ex.getCode());
-    errorMap.put("message", ex.getMessage());
+    if(ex.getParams() != null) {
+      errorMap.putAll(ex.getParams());
+    }
     return ResponseEntity.status(HttpStatus.valueOf(ex.getStatus())).body(errorMap);
   }
 

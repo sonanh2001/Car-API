@@ -1,20 +1,22 @@
 package org.aibles.democar.dto.request;
 
+import javax.validation.constraints.NotNull;
 import org.aibles.democar.entity.Car;
 
 public class UpdateCarRequest extends CreateCarRequest {
 
-  private long carId;
+  @NotNull(message = "an updated car must have an id")
+  private Long carId;
 
   public UpdateCarRequest() {
     super();
   }
 
-  public long getCarId() {
+  public Long getCarId() {
     return carId;
   }
 
-  public void setCarId(long carId) {
+  public void setCarId(Long carId) {
     this.carId = carId;
   }
 

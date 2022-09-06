@@ -7,12 +7,7 @@ public class BaseException extends RuntimeException {
   private int status;
   private String code;
 
-  private String message;
   private Map<String, Object> params;
-
-  public BaseException() {
-    params = new HashMap<>();
-  }
 
   public int getStatus() {
     return status;
@@ -30,21 +25,14 @@ public class BaseException extends RuntimeException {
     this.code = code;
   }
 
-  @Override
-  public String getMessage() {
-    return message;
-  }
-
-  public void setMessage(String message) {
-    this.message = message;
-  }
-
   public Map<String, Object> getParams() {
     return params;
   }
 
   public void addParams(String key, Object value) {
+    if(params == null) {
+      params = new HashMap<>();
+    }
     params.put(key, value);
   }
-
 }
