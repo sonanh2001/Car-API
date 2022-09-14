@@ -5,7 +5,7 @@ import org.aibles.democar.entity.Car;
 
 public class UpdateCarRequest extends CreateCarRequest {
 
-  @NotNull(message = "an updated car must have an id")
+  @NotNull(message = "carId.NotNull.message")
   private Long carId;
 
   public UpdateCarRequest() {

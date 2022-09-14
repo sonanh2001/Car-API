@@ -6,8 +6,22 @@ import java.util.Map;
 public class BaseException extends RuntimeException {
   private int status;
   private String code;
-
   private Map<String, Object> params;
+
+  private Map<String, Object> errorMap;
+
+
+  public Map<String, Object> getErrorMap() {
+    return errorMap;
+  }
+
+  public void setErrorMap(Map<String, Object> errorMap) {
+    this.errorMap = errorMap;
+  }
+
+  public void setParams(Map<String, Object> params) {
+    this.params = params;
+  }
 
   public int getStatus() {
     return status;

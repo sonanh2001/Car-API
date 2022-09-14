@@ -8,28 +8,28 @@ import org.aibles.democar.entity.Car;
 import org.aibles.democar.validation.ModelValidator;
 
 public class CarResponse extends ModelValidator<CarResponse> {
-  @NotNull(message = "a response car must have a id")
+  @NotNull(message = "carId.NotNull.message")
   private Long carId;
-  @NotBlank(message = "name must not blank")
-  @Size(min = 2, max = 128, message = "length of name must between 2 and 128")
+  @NotBlank(message = "name.NotBlank.message")
+  @Size(min = 2, max = 128, message = "name.Size.message")
   private String name;
 
-  @NotBlank(message = "brand must not blank")
-  @Size(min = 2, max = 50, message = "length of brand must between 2 and 50")
+  @NotBlank(message = "brand.NotBlank.message")
+  @Size(min = 2, max = 50, message = "brand.size.message")
   private String brand;
 
-  @Min(value = 4, message = "a car must have more than 3 wheels")
-  @NotNull(message = "a car must have wheel numbers")
+  @Min(value = 4, message = "wheelsNumber.Min.message")
+  @NotNull(message = "wheelsNumber.NotNull.message")
   private Integer wheelsNumber;
 
-  @NotBlank(message = "a car must have a color")
-  @Size(min = 2, max = 20, message = "length of color must between 2 and 20")
+  @NotBlank(message = "color.NotBlank.message")
+  @Size(min = 2, max = 20, message = "color.Size.message")
   private String color;
 
-  @NotNull(message = "a car must have a price")
+  @NotNull(message = "price.NotNull.message")
   private Long price;
 
-  @NotNull(message = "a car must have a publication date")
+  @NotNull(message = "publicationDate.NotNull.message")
   private Integer publicationDate;
 
   public CarResponse() {}

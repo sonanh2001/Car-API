@@ -20,31 +20,31 @@ public class Car extends ModelValidator<Car> {
   private Long carId;
 
   @Column(nullable = false, length = 128)
-  @NotBlank(message = "name must not blank")
-  @Size(min = 2, max = 128, message = "length of name must between 2 and 128")
+  @NotBlank(message = "name.NotBlank.message")
+  @Size(min = 2, max = 128, message = "name.Size.message")
   private String name;
 
   @Column(nullable = false, length = 50)
-  @NotBlank(message = "brand must not blank")
-  @Size(min = 2, max = 50, message = "length of brand must between 2 and 50")
+  @NotBlank(message = "brand.NotBlank.message")
+  @Size(min = 2, max = 50, message = "brand.size.message")
   private String brand;
 
   @Column(nullable = false)
-  @Min(value = 4, message = "a car must have more than 3 wheels")
-  @NotNull(message = "a car must have wheel numbers")
+  @Min(value = 4, message = "wheelsNumber.Min.message")
+  @NotNull(message = "wheelsNumber.NotNull.message")
   private Integer wheelsNumber;
 
   @Column(nullable = false, length = 20)
-  @NotBlank(message = "a car must have a color")
-  @Size(min = 2, max = 20, message = "length of color must between 2 and 20")
+  @NotBlank(message = "color.NotBlank.message")
+  @Size(min = 2, max = 20, message = "color.Size.message")
   private String color;
 
   @Column(nullable = false)
-  @NotNull(message = "a car must have a price")
+  @NotNull(message = "price.NotNull.message")
   private Long price;
 
   @Column(nullable = false)
-  @NotNull(message = "a car must have a publication date")
+  @NotNull(message = "publicationDate.NotNull.message")
   private Integer publicationDate;
 
   public Long getCarId() {
