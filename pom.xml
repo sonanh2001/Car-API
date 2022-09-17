@@ -5,7 +5,7 @@
 	<packaging>pom</packaging>
 	<modules>
 		<module>core-exception</module>
-		<module>core-project</module>
+		<module>project</module>
 	</modules>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -21,7 +21,15 @@
 	<properties>
 		<java.version>11</java.version>
 	</properties>
-
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.aibles.demo-car</groupId>
+				<artifactId>core-exception</artifactId>
+				<version>0.0.1-SNAPSHOT</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 	<build>
 		<plugins>
 			<plugin>
